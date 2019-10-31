@@ -4,7 +4,7 @@ A CLI for omni-express.
 
 ## Customizing your CLI
 
-Check out the documentation at https://github.com/infinitered/gluegun/tree/master/docs.
+Check out the documentation at [Gluegun](https://github.com/infinitered/gluegun/tree/master/docs).
 
 ## Publishing to NPM
 
