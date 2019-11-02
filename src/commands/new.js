@@ -68,6 +68,12 @@ module.exports = {
       props: { name }
     })
 
+    await generate({
+      template: 'middleware/setHeaders.js.ejs',
+      target: `${name}/src/middleware/setHeaders.js`,
+      props: { name }
+    })
+
     info(`Install express, morgan and cors.`)
 
     cd(`${name}`);

@@ -6,6 +6,9 @@ const express = require('express');
 // Basic Router
 const app = express()
 
+// middlewares
+require('./middleware/setHeaders.js');
+
 // Routs
 require('./components/default/router')(app);
 

@@ -1,8 +1,9 @@
 const path = require('path');
 
 module.exports = {
-  name: 'component',
-  alias: ['c'],
+  name: 'generate:component',
+  alias: ['g:c'],
+  description: 'Generate a new component',
   run: async toolbox => {
     const {
       parameters,
