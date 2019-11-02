@@ -3,7 +3,7 @@ const { exec, cd } = require('shelljs');
 
 module.exports = {
   name: 'new',
-  description: 'Generate a new project with express',
+  description: 'Generate a new project with express\nIf you want install packages with yarn use --yarn',
   run: async toolbox => {
     const {
       parameters,
@@ -12,6 +12,7 @@ module.exports = {
     } = toolbox
 
     const name = parameters.first
+    const yarn = parameters.options.yarn || false
 
     if (!!!name) {
       error("Project name is required!")
@@ -76,9 +77,15 @@ module.exports = {
 
     info(`Install express, morgan and cors.`)
 
-    cd(`${name}`);
-    exec(`yarn install`);
-    cd('..');
+    if (yarn) {
+      cd(`${name}`);
+      exec(`yarn install`);
+      cd('..');
+    } else if (!yarn) {
+      cd(`${name}`);
+      exec(`npm install`);
+      cd('..');
+    }
 
     success(`Generated project ${name} folder`)
   }
