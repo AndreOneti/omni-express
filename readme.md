@@ -1,11 +1,5 @@
 # omni-express
 
-[![NPM Version][npm-image]][npm-url]
-[![NPM Downloads][downloads-image]][downloads-url]
-[![Linux Build][travis-image]][travis-url]
-[![Windows Build][appveyor-image]][appveyor-url]
-[![Test Coverage][coveralls-image]][coveralls-url]
-
 ## Installation
 
 This is a [Node.js](https://nodejs.org/en/) module available through the
