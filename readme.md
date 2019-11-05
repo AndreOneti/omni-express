@@ -1,25 +1,59 @@
-# omni-express CLI
+# omni-express
 
-A CLI for omni-express.
+## Installation
 
-## Customizing your CLI
+This is a [Node.js](https://nodejs.org/en/) module available through the
+[npm registry](https://www.npmjs.com/).
 
-Check out the documentation at [Gluegun](https://github.com/infinitered/gluegun/tree/master/docs).
+Before installing, [download and install Node.js](https://nodejs.org/en/download/).
+Node.js 8.0.0 or higher is required.
 
-## Publishing to NPM
+Using npm
 
-To package your CLI up for NPM, do this:
-
-```shell
-$ npm login
-$ npm whoami
-$ npm lint
-$ npm test
-(if typescript, run `npm run build` here)
-$ npm publish
+```bash
+$ npm install -g omni-express
 ```
 
-# License
+Using yarn
 
-MIT - see LICENSE
+```bash
+$ yarn global add omni-express
+```
 
+### Create the project:
+
+Using npm
+
+```bash
+$ omni-express new myProject
+```
+
+Using yarn
+
+```bash
+$ omni-express new myProject --yarn
+```
+
+#### New project flags
+> --code    -   To open vscode after creation <br>
+> --git     -   To disable git init
+
+### Create new component:
+
+```bash
+$ omni-express generate:component myNewComponent
+or
+$ omni-express g:c myNewComponent
+```
+
+### Create new middleware:
+
+```bash
+$ omni-express generate:middleware myNewMiddleware
+or
+$ omni-express g:m myNewMiddleware
+```
+
+## License
+
+[MIT](LICENSE)

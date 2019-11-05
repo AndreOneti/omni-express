@@ -1,9 +1,11 @@
 /** @type {import('shelljs')} */
 const { exec, cd } = require('shelljs');
+const fs = require('fs');
 
 module.exports = {
   name: 'new',
-  description: 'Generate a new project with express\nIf you want install packages with yarn use --yarn',
+  alias: ['n'],
+  description: 'Generate a new project with express\nInstall packages with yarn use --yarn\nGit init automatic, to disable use --git\n--code to open project on vscode',
   run: async toolbox => {
     const {
       parameters,
@@ -13,9 +15,16 @@ module.exports = {
 
     const name = parameters.first
     const yarn = parameters.options.yarn || false
+    const code = parameters.options.code || false
+    const git = parameters.options.git ? false : true
 
     if (!!!name) {
       error("Project name is required!")
+      return;
+    }
+
+    if (fs.existsSync(`./${name}`)) {
+      error("Project or folder already exist");
       return;
     }
 
@@ -30,6 +39,18 @@ module.exports = {
     await generate({
       template: 'package.json.ejs',
       target: `${name}/package.json`,
+      props: { name }
+    })
+
+    await generate({
+      template: '.env.ejs',
+      target: `${name}/.env`,
+      props: { name }
+    })
+
+    await generate({
+      template: '.editorconfig.ejs',
+      target: `${name}/.editorconfig`,
       props: { name }
     })
 
@@ -77,16 +98,26 @@ module.exports = {
 
     info(`Install express, morgan and cors.`)
 
-    if (yarn) {
-      cd(`${name}`);
-      exec(`yarn install`);
-      cd('..');
-    } else if (!yarn) {
-      cd(`${name}`);
-      exec(`npm install`);
-      cd('..');
+    cd(`${name}`);
+    if (git) {
+      exec(`git init`);
+      await createGitIgnore()
+        .catch(err => { return err })
     }
+    yarn ? exec(`yarn install`) : exec(`npm install`);
+    if (code) exec(`code .`);
+    cd('..');
 
     success(`Generated project ${name} folder`)
   }
+}
+
+function createGitIgnore(data) {
+  return new Promise((resolve, reject) => {
+    fs.writeFile('.gitignore', 'node_modules\n.env', (err) => {
+      if (err)
+        reject(data);
+      resolve('node_modules saved!');
+    });
+  })
 }

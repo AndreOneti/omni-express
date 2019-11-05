@@ -2,7 +2,7 @@
   "name": "omni-express",
   "version": "0.0.1",
   "description": "omni-express CLI",
-  "private": true,
+  "private": false,
   "bin": {
     "omni-express": "bin/omni-express"
   },
@@ -42,5 +42,23 @@
   "prettier": {
     "semi": false,
     "singleQuote": true
-  }
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreOneti/omni-express.git"
+  },
+  "keywords": [
+    "express",
+    "expressjs",
+    "rest",
+    "rest-api"
+  ],
+  "author": "Andre Oneti",
+  "bugs": {
+    "url": "https://github.com/AndreOneti/omni-express/issues"
+  },
+  "homepage": "https://github.com/AndreOneti/omni-express#readme"
 }
