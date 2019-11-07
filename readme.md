@@ -2,6 +2,7 @@
 
   [![NPM Version][npm-image]][npm-url]
   [![NPM Downloads][downloads-image]][downloads-url]
+  [![Maintenance][maintenance-img]][maintenance-url]
 
   [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
   [![GitHub issues][issues-open-image]][issues-open-url]
@@ -70,6 +71,9 @@ $ omni-express g:m myNewMiddleware
   [downloads-url]: https://npmjs.org/package/omni-express
   [npm-image]: https://img.shields.io/npm/v/omni-express.svg
   [npm-url]: https://npmjs.org/package/omni-express
+  [maintenance-img]: https://img.shields.io/badge/Maintained%3F-yes-green.svg
+  [maintenance-url]: https://github.com/AndreOneti/omni-express
+
   [vulnerabilities-image]: https://snyk.io/test/github/AndreOneti/omni-express/badge.svg?targetFile=package.json
   [vulnerabilities-url]: https://snyk.io/test/github/AndreOneti/omni-express?targetFile=package.json
   [issues-open-image]: https://img.shields.io/github/issues/AndreOneti/omni-express.svg
