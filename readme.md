@@ -5,7 +5,6 @@
 
   [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
   [![GitHub issues][issues-open-image]][issues-open-url]
-  [![GitHub issues][issues-closed-image]][issues-closed-url]
   [![GitHub forks][forks-image]][forks-url]
   [![GitHub stars][stars-image]][stars-url]
 
@@ -75,8 +74,6 @@ $ omni-express g:m myNewMiddleware
   [vulnerabilities-url]: https://snyk.io/test/github/AndreOneti/omni-express?targetFile=package.json
   [issues-open-image]: https://img.shields.io/github/issues/AndreOneti/omni-express.svg
   [issues-open-url]: https://github.com/AndreOneti/omni-express/issues?q=is%3Aopen+is%3Aissue
-  [issues-closed-image]: https://img.shields.io/github/issues-closed/AndreOneti/omni-express.svg
-  [issues-closed-url]: https://github.com/AndreOneti/omni-express/issues?q=is%3Aissue+is%3Aclosed
   [forks-image]: https://img.shields.io/github/forks/AndreOneti/omni-express.svg
   [forks-url]: https://github.com/AndreOneti/omni-express
   [stars-image]: https://img.shields.io/github/stars/AndreOneti/omni-express.svg
