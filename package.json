@@ -1,6 +1,6 @@
 {
   "name": "omni-express",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "omni-express CLI",
   "private": false,
   "bin": {
@@ -24,6 +24,7 @@
   "license": "MIT",
   "dependencies": {
     "gluegun": "latest",
+    "pkg-up": "^3.1.0",
     "shelljs": "^0.8.3"
   },
   "devDependencies": {

@@ -1,4 +1,5 @@
 const fs = require('fs');
+const pkgUp = require('pkg-up');
 
 module.exports = {
   name: 'generate:middleware',
@@ -13,7 +14,9 @@ module.exports = {
 
     const name = parameters.first
 
-    let path = process.cwd().split('src')[0].replace(/\\/g, '/');
+    let packagePath = await pkgUp();
+    let index = packagePath.lastIndexOf('/') !== -1 ? packagePath.lastIndexOf('/') : packagePath.lastIndexOf('\\');
+    let path = packagePath.slice(0, index + 1);
 
     var lineNumber = 0;
     var haveMiddleware = false;

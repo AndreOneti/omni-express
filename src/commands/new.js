@@ -16,7 +16,7 @@ module.exports = {
     const name = parameters.first
     const yarn = parameters.options.yarn || false
     const code = parameters.options.code || false
-    const git = parameters.options.git ? false : true
+    const git = parameters.options.git === undefined ? true : false
 
     if (!!!name) {
       error("Project name is required!")

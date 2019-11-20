@@ -44,8 +44,8 @@ $ omni-express new myProject --yarn
 ```
 
 #### New project flags
-> --code    -   To open vscode after creation <br>
-> --git     -   To disable git init
+> --code       -   To open vscode after creation <br>
+> --no-git     -   To disable git init
 
 ### Create new component:
 
