@@ -15,6 +15,12 @@ module.exports = {
     const name = parameters.first
 
     let packagePath = await pkgUp();
+
+    if (!packagePath) {
+      error("Express project not found");
+      return;
+    }
+
     let index = packagePath.lastIndexOf('/') !== -1 ? packagePath.lastIndexOf('/') : packagePath.lastIndexOf('\\');
     let path = packagePath.slice(0, index + 1);
 
