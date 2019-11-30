@@ -58,10 +58,12 @@ $ omni-express g:c myNewComponent
 ### Create new middleware:
 
 ```bash
-$ omni-express generate:middleware myNewMiddleware
+$ omni-express generate:middleware myNewMiddleware --global /local
 or
-$ omni-express g:m myNewMiddleware
+$ omni-express g:m myNewMiddleware --global/local
 ```
+- global to set app.use(myNewMiddleware)
+- local to use on one or more route(s)  
 
 ## License
 
