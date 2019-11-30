@@ -13,6 +13,9 @@ module.exports = {
     } = toolbox
 
     const name = parameters.first
+    const global = Object.keys(parameters.options)[0]
+      ? Object.keys(parameters.options)[0]
+      : "global";
 
     let packagePath = await pkgUp();
 
@@ -25,6 +28,12 @@ module.exports = {
 
     var lineNumber = 0;
     var haveMiddleware = false;
+
+    var projectTemplate = "";
+
+    projectTemplate = global === "global"
+      ? 'middleware/middleware-global.js.ejs'
+      : 'middleware/middleware-local.js.ejs';
 
     try {
       fs.readFileSync(`${path}/src/middleware/${name}.js`, "utf8").toString();
@@ -39,7 +48,10 @@ module.exports = {
     });
 
     if (lineNumber !== 0 && !haveMiddleware) {
-      data.splice(lineNumber, 0, `require('./middleware/${name}.js');`);
+      if (global === "global") {
+        data.splice(lineNumber, 0, `require('./middleware/${name}.js')(app);`);
+      }
+
       var text = data.join("\n");
 
       fs.writeFile(`${path}/src/routes.js`, text, function (err) {
@@ -51,7 +63,7 @@ module.exports = {
     }
 
     await generate({
-      template: 'middleware/middleware.js.ejs',
+      template: projectTemplate,
       target: `${path}/src/middleware/${name}.js`,
       props: { name }
     })

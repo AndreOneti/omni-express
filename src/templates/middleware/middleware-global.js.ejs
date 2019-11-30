@@ -1,0 +1,5 @@
+function <%= props.name %>(req, res, next) {
+  next()
+}
+
+module.exports = (app) => app.use(<%= props.name %>);
