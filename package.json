@@ -1,6 +1,6 @@
 {
   "name": "omni-express",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "omni-express CLI",
   "private": false,
   "bin": {

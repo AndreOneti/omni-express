@@ -1,7 +1,7 @@
 const router = require('express').Router();
 
-const { GetRout } = require('./controller/index');
+const { GetRoute } = require('./controller/index');
 
-router.get('/', GetRout);
+router.get('/', GetRoute);
 
 module.exports = app => app.use('/', router);

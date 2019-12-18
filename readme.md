@@ -2,6 +2,7 @@
 
   [![NPM Version][npm-image]][npm-url]
   [![NPM Downloads][downloads-image]][downloads-url]
+  [![NPM Downloads Total][downloads-image-total]][downloads-url-total]
   [![Maintenance][maintenance-img]][maintenance-url]
 
   [![Known Vulnerabilities][vulnerabilities-image]][vulnerabilities-url]
@@ -65,12 +66,38 @@ $ omni-express g:m myNewMiddleware --global/local
 - global to set app.use(myNewMiddleware)
 - local to use on one or more route(s)  
 
+## Folder structure
+
+```
+|-- root folder
+|  +--● bin
+|  |  |--- server.js
+|  |
+|  +--● src
+|  |  +---● components
+|  |  |   +--● default
+|  |  |   |  +--● controller
+|  |  |   |     |-- index.js
+|  |  |   |-- router.js
+|  |  |
+|  |  +---● middleware
+|  |      |-- setHeaders.js
+|  |
+|  +--- app.js
+|  |
+|  |--- routes.js
+|
+|-- index.js
+```
+
 ## License
 
   [![npm](https://img.shields.io/npm/l/express.svg)](https://github.com/AndreOneti/omni-express/blob/master/LICENSE)
 
   [downloads-image]: https://img.shields.io/npm/dm/omni-express.svg
   [downloads-url]: https://npmjs.org/package/omni-express
+  [downloads-image-total]: https://img.shields.io/npm/dt/omni-express.svg
+  [downloads-url-total]: https://npmjs.org/package/omni-express
   [npm-image]: https://img.shields.io/npm/v/omni-express.svg
   [npm-url]: https://npmjs.org/package/omni-express
   [maintenance-img]: https://img.shields.io/badge/Maintained%3F-yes-green.svg
